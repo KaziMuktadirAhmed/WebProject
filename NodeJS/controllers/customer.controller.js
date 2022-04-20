@@ -1,5 +1,5 @@
 const express = require('express');
-const { isObjectIdOrHexString, isValidObjectId } = require('../db');
+const { isValidObjectId } = require('../db');
 var router = express.Router();
 
 var { Customer } = require('../models/customer');
