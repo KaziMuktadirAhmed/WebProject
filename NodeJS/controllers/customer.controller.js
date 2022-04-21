@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 
     Customer.countDocuments({email: customer.email}, (err, cnt) => {
         if(cnt > 0)
-            console.log('Account already exists with the email: ' + customer.email);
+            return res.status(404).send('Account already exists with the email: ' + customer.email);
         else{
             customer.save((err, doc) => {
                 if(!err)    res.send(doc);
